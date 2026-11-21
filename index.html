@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090611">
+<title>GAMEVERSE | Ultimate Gaming Universe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="loader" id="loader">
+    <div class="loader-logo">GAME<span>VERSE</span></div>
+    <div class="loader-bar"></div>
+    <p>ENTERING THE GAMING UNIVERSE...</p>
+</div>
+
+<header class="navbar">
+    <a href="#" class="logo">GAME<span>VERSE</span></a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#explore">Explore</a>
+        <a href="#android">Android</a>
+        <a href="#pc">PC Games</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <span class="tag">✦ YOUR ULTIMATE GAMING DESTINATION</span>
+        <h1>ENTER THE<br><span>GAMEVERSE</span></h1>
+        <p>Discover thousands of games. Explore new worlds.<br>
+        Find your next legendary adventure.</p>
+
+        <div class="hero-buttons">
+            <a href="#explore" class="btn primary">EXPLORE GAMES →</a>
+            <a href="#about" class="btn secondary">DISCOVER MORE</a>
+        </div>
+
+        <div class="hero-stats">
+            <div><strong>15K+</strong><small>GAME TARGET</small></div>
+            <div><strong>50+</strong><small>PLATFORMS</small></div>
+            <div><strong>∞</strong><small>ADVENTURES</small></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="explore">
+    <div class="section-title">
+        <span>DISCOVER YOUR NEXT ADVENTURE</span>
+        <h2>EXPLORE <b>GAMES</b></h2>
+        <p>Find games from different genres and platforms.</p>
+    </div>
+
+    <div class="search-box">
+        <input type="search" id="searchInput"
+        placeholder="Search GTA V, Minecraft, Free Fire...">
+        <button onclick="searchGames()">SEARCH</button>
+    </div>
+
+    <div class="filters">
+        <select id="genreFilter" onchange="filterGames()">
+            <option value="">All Genres</option>
+            <option value="action">Action</option>
+            <option value="adventure">Adventure</option>
+            <option value="racing">Racing</option>
+            <option value="shooter">Shooter</option>
+            <option value="sports">Sports</option>
+            <option value="rpg">RPG</option>
+            <option value="strategy">Strategy</option>
+        </select>
+
+        <select id="platformFilter" onchange="filterGames()">
+            <option value="">All Platforms</option>
+            <option value="4">PC</option>
+            <option value="187">PlayStation 5</option>
+            <option value="7">Nintendo Switch</option>
+            <option value="21">Android</option>
+            <option value="3">iOS</option>
+        </select>
+    </div>
+
+    <div class="game-grid" id="gameGrid">
+        <div class="loading-text">Loading amazing games...</div>
+    </div>
+
+    <button class="load-more" onclick="loadMore()">LOAD MORE GAMES ↓</button>
+</section>
+
+<section class="spotlight" id="android">
+    <div>
+        <span class="tag">MOBILE GAMING ZONE</span>
+        <h2>ANDROID<br><b>GAMING</b></h2>
+        <p>Discover exciting mobile adventures, action games,
+        racing experiences and more.</p>
+        <button class="btn primary" onclick="showAndroid()">EXPLORE ANDROID</button>
+    </div>
+</section>
+
+<section class="spotlight pc-spotlight" id="pc">
+    <div>
+        <span class="tag">NEXT LEVEL EXPERIENCE</span>
+        <h2>PC <b>GAMING</b></h2>
+        <p>Discover legendary PC titles, immersive worlds
+        and unforgettable adventures.</p>
+        <button class="btn primary" onclick="showPC()">EXPLORE PC GAMES</button>
+    </div>
+</section>
+
+<section class="section" id="favorites">
+    <div class="section-title">
+        <span>YOUR PERSONAL COLLECTION</span>
+        <h2>MY <b>FAVORITES</b> ♥</h2>
+    </div>
+    <div class="game-grid" id="favoriteGrid">
+        <p class="empty">Your favorite games will appear here.</p>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="section-title">
+        <span>WELCOME TO THE FUTURE</span>
+        <h2>ABOUT <b>GAMEVERSE</b></h2>
+    </div>
+
+    <div class="about-grid">
+        <div class="about-card">
+            <h3>🚀 OUR MISSION</h3>
+            <p>To create a gaming discovery platform where players
+            can explore games, discover new adventures and find
+            information about their favorite titles.</p>
+        </div>
+
+        <div class="about-card">
+            <h3>🌌 OUR VISION</h3>
+            <p>To build an exciting gaming universe connecting
+            players with thousands of games across different
+            platforms and genres.</p>
+        </div>
+
+        <div class="about-card">
+            <h3>🎮 OUR GOAL</h3>
+            <p>Make discovering games simple, beautiful and
+            enjoyable for every gaming enthusiast.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="section-title">
+        <span>LET'S CONNECT</span>
+        <h2>CONTACT <b>US</b></h2>
+    </div>
+
+    <p>Have a question or suggestion? We'd love to hear from you.</p>
+
+    <form onsubmit="sendMessage(event)">
+        <input type="text" id="contactName" placeholder="Your Name" required>
+        <input type="email" id="contactEmail" placeholder="Your Email" required>
+        <textarea id="contactMessage" placeholder="Your Message..." required></textarea>
+        <button class="btn primary" type="submit">SEND MESSAGE →</button>
+    </form>
+</section>
+
+<footer>
+    <a href="#" class="logo">GAME<span>VERSE</span></a>
+    <p>YOUR WORLD. YOUR GAMES. YOUR UNIVERSE.</p>
+    <p class="copyright">© 2026 GAMEVERSE. All Rights Reserved.</p>
+    <a href="https://rawg.io" target="_blank" rel="noopener">Game data powered by RAWG</a>
+</footer>
+
+<div class="modal" id="gameModal">
+    <div class="modal-content">
+        <button class="close" onclick="closeModal()">✕</button>
+        <div id="modalDetails"></div>
+    </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+
+</body>
+                                                                  </html>
